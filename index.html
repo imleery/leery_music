@@ -6,11 +6,6 @@
     <title>Leery Music</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
         body {
             background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
             background-size: 400% 400%;
@@ -20,80 +15,6 @@
             text-align: center;
             margin: 0;
             padding: 0;
-        }
-        .header {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .banner {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: contain;
-        }
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: -75px;
-            border: 5px solid white;
-        }
-        .social-links {
-            margin-top: 10px;
-        }
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 24px;
-        }
-        .description {
-            margin: 20px;
-            font-size: 18px;
-        }
-        .track-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .track-card {
-            background: #1a1a1a;
-            width: 300px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #9147ff;
-            text-align: center;
-            position: relative;
-        }
-        .track-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .custom-audio {
-            width: calc(100% - 20px);
-            max-width: 260px;
-            background: #0a0a1a;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px auto 0;
-            gap: 10px;
-        }
-        .play-button {
-            background: #1db954;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px #1db954;
-            color: white;
-            font-size: 20px;
         }
         .progress-bar {
             flex: 1;
@@ -109,77 +30,62 @@
             width: 0%;
             border-radius: 5px;
         }
-        .time {
-            font-size: 12px;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="banner.jpg" alt="Banner" class="banner">
-        <img src="avatar.jpg" alt="Avatar" class="avatar">
-        <h1>Leery Music</h1>
-        <div class="social-links">
-            <a href="https://youtube.com" target="_blank">🎵 YouTube</a>
-            <a href="https://spotify.com" target="_blank">🎵 Spotify</a>
-            <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+    <div class="track-card">
+        <img src="bruim.jpg" alt="Brute">
+        <div class="custom-audio">
+            <div class="play-button" onclick="playTrack('bruteAudio', this)">▶</div>
+            <div class="progress-bar" onclick="seek(event, 'bruteAudio')">
+                <div class="progress"></div>
+            </div>
+            <div class="time">0:00 / 0:00</div>
+            <audio id="bruteAudio" src="Leery - Brute.mp3"></audio>
         </div>
     </div>
-    <div class="description">
-        <p>Инструментальная музыка, вдохновлённая атмосферой и эмоциями. Добро пожаловать в мир звуков!</p>
-    </div>
-    <div id="music" class="section">
-        <h2>Треки</h2>
-        <div class="track-list">
-            <div class="track-card">
-                <img src="bruim.jpg" alt="Brute">
-                <div class="track-info">
-                    <div class="track-title">Brute</div>
-                    <div class="track-meta">2025 • Сингл</div>
-                </div>
-                <div class="custom-audio">
-                    <div class="play-button" onclick="playTrack('bruteAudio', this)">▶</div>
-                    <div class="progress-bar"><div class="progress"></div></div>
-                    <div class="time">0:00 / 0:00</div>
-                    <audio id="bruteAudio" src="Leery - Brute.mp3"></audio>
-                </div>
-            </div>
-            <div class="track-card">
-                <img src="Uglim.jpg" alt="Ugliness">
-                <div class="track-info">
-                    <div class="track-title">Ugliness</div>
-                    <div class="track-meta">2025 • Сингл</div>
-                </div>
-                <div class="custom-audio">
-                    <div class="play-button" onclick="playTrack('uglinessAudio', this)">▶</div>
-                    <div class="progress-bar"><div class="progress"></div></div>
-                    <div class="time">0:00 / 0:00</div>
-                    <audio id="uglinessAudio" src="Leery - Ugliness.mp3"></audio>
-                </div>
-            </div>
-        </div>
-    </div>
-<script>
-    function playTrack(audioId, button) {
-        let audio = document.getElementById(audioId);
-        let allAudios = document.querySelectorAll("audio");
-
-        allAudios.forEach(a => {
-            if (a !== audio) {
-                a.pause();
-                a.parentElement.querySelector(".play-button").textContent = "▶";
+    <script>
+        function playTrack(audioId, button) {
+            let audio = document.getElementById(audioId);
+            let allAudios = document.querySelectorAll("audio");
+            allAudios.forEach(a => {
+                if (a !== audio) {
+                    a.pause();
+                    a.parentElement.querySelector(".play-button").textContent = "▶";
+                }
+            });
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸";
+            } else {
+                audio.pause();
+                button.textContent = "▶";
             }
-        });
-
-        if (audio.paused) {
-            audio.play();
-            button.textContent = "⏸";
-        } else {
-            audio.pause();
-            button.textContent = "▶";
         }
-    }
-</script>
+        function updateProgress(audio) {
+            let progressBar = audio.parentElement.querySelector(".progress");
+            let timeDisplay = audio.parentElement.querySelector(".time");
+            let currentTime = Math.floor(audio.currentTime);
+            let duration = Math.floor(audio.duration) || 0;
+            let formattedCurrentTime = formatTime(currentTime);
+            let formattedDuration = formatTime(duration);
+            timeDisplay.textContent = `${formattedCurrentTime} / ${formattedDuration}`;
+            progressBar.style.width = (currentTime / duration) * 100 + "%";
+        }
+        function formatTime(seconds) {
+            let min = Math.floor(seconds / 60);
+            let sec = seconds % 60;
+            return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+        }
+        function seek(event, audioId) {
+            let audio = document.getElementById(audioId);
+            let progressBar = event.currentTarget;
+            let clickPosition = event.offsetX / progressBar.offsetWidth;
+            audio.currentTime = clickPosition * audio.duration;
+        }
+        document.querySelectorAll("audio").forEach(audio => {
+            audio.addEventListener("timeupdate", () => updateProgress(audio));
+        });
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -25,55 +25,6 @@
             border: 5px solid #9147ff;
             box-shadow: 0px 0px 15px #9147ff;
         }
-        .socials {
-            margin-top: 40px;
-            margin-bottom: 50px;
-        }
-        .socials a {
-            display: block;
-            width: 200px;
-            margin: 0 auto 10px;
-            padding: 10px;
-            border: 2px solid #9147ff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px #9147ff;
-            transition: border-color 0.3s;
-            text-decoration: none;
-            color: white;
-        }
-        .socials a:hover {
-            border-color: red;
-        }
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .menu a {
-            color: #9147ff;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 10px;
-            border: 2px solid #9147ff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px #9147ff;
-            transition: border-color 0.3s;
-        }
-        .menu a:hover {
-            border-color: red;
-        }
-        .section {
-            display: none;
-            margin-top: 40px;
-            padding: 20px;
-            border: 2px solid #9147ff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px #9147ff;
-        }
-        .active {
-            display: block;
-        }
         .video-container {
             width: 100%;
             max-width: 500px;
@@ -88,7 +39,6 @@
             height: auto;
             border-radius: 10px;
             display: block;
-            pointer-events: none;
         }
         .play-button {
             position: absolute;
@@ -110,12 +60,27 @@
         .play-button:hover {
             background: red;
         }
+        .fullscreen-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            color: white;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .fullscreen-button:hover {
+            background: red;
+        }
     </style>
     <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
         function toggleVideo(videoId, button) {
             let video = document.getElementById(videoId);
             if (video.paused) {
@@ -126,36 +91,30 @@
                 button.style.display = 'flex';
             }
         }
+        function enterFullscreen(videoId) {
+            let video = document.getElementById(videoId);
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        }
     </script>
 </head>
 <body>
     <img src="banner.jpg" alt="Баннер" class="banner">
     <img src="avatar.jpg" alt="Аватарка" class="avatar">
     
-    <div class="socials">
-        <a href="https://www.youtube.com/@imleery1" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271" target="_blank">Spotify</a>
-        <a href="https://www.instagram.com/_imleery_/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1" target="_blank">TikTok</a>
-        <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
-    </div>
-
-    <div class="menu">
-        <a href="#" onclick="showSection('home')">Главная</a>
-        <a href="#" onclick="showSection('videos')">Видео</a>
-        <a href="#" onclick="showSection('music')">Треки</a>
-    </div>
-    
-    <div id="home" class="section active">
-        <h2>Обо мне</h2>
-        <p>Привет. Я обычный парень, занимаюсь музыкой не так давно. Хочу делиться своими работами с публикой. Спасибо, что интересуешься мной.</p>
-    </div>
-    
     <div id="videos" class="section">
         <h2>Видео</h2>
         <div class="video-container">
             <video id="video1" src="video1.mp4" type="video/mp4" playsinline></video>
             <button class="play-button" onclick="toggleVideo('video1', this)">▶</button>
+            <button class="fullscreen-button" onclick="enterFullscreen('video1')">⛶</button>
         </div>
     </div>
 </body>

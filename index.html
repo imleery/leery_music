@@ -112,6 +112,24 @@
             color: white;
         }
     </style>
+    <script>
+        function playTrack(audioId, button) {
+            let audio = document.getElementById(audioId);
+            document.querySelectorAll('audio').forEach(a => {
+                if (a.id !== audioId) {
+                    a.pause();
+                }
+            });
+            document.querySelectorAll('.play-button').forEach(btn => btn.innerHTML = '▶');
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '⏸';
+            } else {
+                audio.pause();
+                button.innerHTML = '▶';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -122,6 +140,8 @@
             <a href="https://youtube.com" target="_blank">🎵 YouTube</a>
             <a href="https://spotify.com" target="_blank">🎵 Spotify</a>
             <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+            <a href="https://tiktok.com" target="_blank">🎶 TikTok</a>
+            <a href="https://soundcloud.com" target="_blank">🔊 SoundCloud</a>
         </div>
     </div>
     <div class="description">
@@ -138,8 +158,6 @@
                 </div>
                 <div class="custom-audio">
                     <div class="play-button" onclick="playTrack('bruteAudio', this)">▶</div>
-                    <div class="progress-bar"><div class="progress"></div></div>
-                    <div class="time">0:00 / 0:00</div>
                     <audio id="bruteAudio" src="Leery - Brute.mp3"></audio>
                 </div>
             </div>
@@ -151,8 +169,6 @@
                 </div>
                 <div class="custom-audio">
                     <div class="play-button" onclick="playTrack('uglinessAudio', this)">▶</div>
-                    <div class="progress-bar"><div class="progress"></div></div>
-                    <div class="time">0:00 / 0:00</div>
                     <audio id="uglinessAudio" src="Leery - Ugliness.mp3"></audio>
                 </div>
             </div>

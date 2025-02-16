@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -6,17 +6,19 @@
     <title>Leery Music</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         body {
-            background: linear-gradient(135deg, #0a0a0a, #220033, #550088);
+            background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
             background-size: 400% 400%;
-            animation: gradientBG 10s infinite alternate;
+            animation: gradient 10s ease infinite;
             color: white;
             font-family: 'Poppins', sans-serif;
             text-align: center;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
         }
         .banner {
             width: 100%;
@@ -80,6 +82,21 @@
         .active {
             display: block;
         }
+        .track-card {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #9147ff;
+        }
+        #home h2 {
+            color: #d8b3ff;
+        }
+        #home p {
+            color: #4b92db;
+        }
     </style>
     <script>
         function showSection(id) {
@@ -94,9 +111,9 @@
     
     <div class="socials">
         <a href="https://www.youtube.com/@imleery1" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT" target="_blank">Spotify</a>
+        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271" target="_blank">Spotify</a>
         <a href="https://www.instagram.com/_imleery_/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@imleery" target="_blank">TikTok</a>
+        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1" target="_blank">TikTok</a>
         <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
     </div>
 

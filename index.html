@@ -19,6 +19,67 @@
             font-family: 'Poppins', sans-serif;
             text-align: center;
         }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -75px;
+            border: 5px solid #9147ff;
+            box-shadow: 0px 0px 15px #9147ff;
+        }
+        .socials {
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+        .socials a {
+            display: block;
+            width: 200px;
+            margin: 0 auto 10px;
+            padding: 10px;
+            border: 2px solid #9147ff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #9147ff;
+            text-decoration: none;
+            color: white;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .menu a {
+            color: #9147ff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+            border: 2px solid #9147ff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #9147ff;
+        }
+        .section {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #9147ff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #9147ff;
+        }
+        .active {
+            display: block;
+        }
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
         .track-card {
             background: #1a1a1a;
             width: 300px;
@@ -44,45 +105,73 @@
             font-size: 14px;
             color: gray;
         }
-        audio {
-            width: 100%;
-            margin-top: 10px;
+        .play-button {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: #1db954;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #1db954;
+        }
+        .play-button::after {
+            content: '\25B6';
+            color: white;
+            font-size: 20px;
         }
     </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <img src="banner.jpg" alt="Баннер" class="banner">
     <img src="avatar.jpg" alt="Аватарка" class="avatar">
+    
+    <div class="socials">
+        <a href="#">YouTube</a>
+        <a href="#">Spotify</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">SoundCloud</a>
+    </div>
     
     <div class="menu">
         <a href="#" onclick="showSection('home')">Главная</a>
         <a href="#" onclick="showSection('music')">Треки</a>
     </div>
     
-    <div id="music" class="section active">
+    <div id="home" class="section active">
+        <h2>Обо мне</h2>
+        <p>Привет. Я обычный парень, занимаюсь музыкой не так давно. Хочу делиться своими работами с публикой. Спасибо, что интересуешься мной.</p>
+    </div>
+    
+    <div id="music" class="section">
         <h2>Треки</h2>
         <div class="track-list">
             <div class="track-card">
-                <img src="bruim.jpg" alt="Brute">
+                <img src="bruim.jpg" alt="Трек">
                 <div class="track-info">
                     <div class="track-title">Brute</div>
                     <div class="track-meta">2025 • Сингл</div>
                 </div>
-                <audio controls>
-                    <source src="Leery - Brute.mp3" type="audio/mpeg">
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+                <div class="play-button" onclick="alert('Воспроизведение Brute')"></div>
             </div>
             <div class="track-card">
-                <img src="Uglim.jpg" alt="Ugliness">
+                <img src="Uglim.jpg" alt="Трек">
                 <div class="track-info">
                     <div class="track-title">Ugliness</div>
                     <div class="track-meta">2025 • Сингл</div>
                 </div>
-                <audio controls>
-                    <source src="Leery - Ugliness.mp3" type="audio/mpeg">
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+                <div class="play-button" onclick="alert('Воспроизведение Ugliness')"></div>
             </div>
         </div>
     </div>

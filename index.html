@@ -158,5 +158,67 @@
             </div>
         </div>
     </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function playTrack(audioId, button) {
+        let audio = document.getElementById(audioId);
+        let parent = button.closest(".custom-audio");
+        let progressBar = parent.querySelector(".progress-bar");
+        let progress = parent.querySelector(".progress");
+        let timeDisplay = parent.querySelector(".time");
+
+        // Останавливаем другие треки
+        document.querySelectorAll("audio").forEach(a => {
+            if (a !== audio) {
+                a.pause();
+                a.parentElement.querySelector(".play-button").textContent = "▶";
+            }
+        });
+
+        // Включаем или ставим на паузу
+        if (audio.paused) {
+            audio.play();
+            button.textContent = "⏸";
+        } else {
+            audio.pause();
+            button.textContent = "▶";
+        }
+
+        // Обновление прогресса и времени
+        audio.addEventListener("timeupdate", function () {
+            let currentTime = formatTime(audio.currentTime);
+            let duration = formatTime(audio.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+
+            let progressPercent = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+        });
+
+        // Перемотка по клику на прогресс-бар
+        progressBar.addEventListener("click", function (e) {
+            let rect = progressBar.getBoundingClientRect();
+            let offsetX = e.clientX - rect.left;
+            let newTime = (offsetX / progressBar.offsetWidth) * audio.duration;
+            audio.currentTime = newTime;
+        });
+    }
+
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return "0:00";
+        let min = Math.floor(seconds / 60);
+        let sec = Math.floor(seconds % 60);
+        return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+    }
+
+    // Назначаем обработчики кликов для всех кнопок play
+    document.querySelectorAll(".play-button").forEach(button => {
+        button.addEventListener("click", function () {
+            let audioId = this.parentElement.querySelector("audio").id;
+            playTrack(audioId, this);
+        });
+    });
+});
+</script>
+
 </body>
 </html>

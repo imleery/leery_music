@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -92,13 +92,30 @@
             display: block;
         }
         .track-card {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #0a0a1a, #1a004d);
             padding: 15px;
             margin: 10px auto;
             width: 80%;
             max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px #9147ff;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .track-card img {
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px #9147ff;
+            margin-bottom: 10px;
+        }
+        .track-card p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        audio {
+            width: 100%;
+            border-radius: 10px;
         }
         #home h2 {
             color: #d8b3ff;
@@ -119,11 +136,11 @@
     <img src="avatar.jpg" alt="Аватарка" class="avatar">
     
     <div class="socials">
-        <a href="https://www.youtube.com/@imleery1" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271" target="_blank">Spotify</a>
-        <a href="https://www.instagram.com/_imleery_/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1" target="_blank">TikTok</a>
-        <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
+        <a href="#">YouTube</a>
+        <a href="#">Spotify</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">SoundCloud</a>
     </div>
 
     <div class="menu">
@@ -139,6 +156,7 @@
     <div id="music" class="section">
         <h2>Треки</h2>
         <div class="track-card">
+            <img src="cover1.jpg" alt="Трек 1">
             <p>Трек 1</p>
             <audio controls>
                 <source src="track1.mp3" type="audio/mpeg">
@@ -146,6 +164,7 @@
             </audio>
         </div>
         <div class="track-card">
+            <img src="cover2.jpg" alt="Трек 2">
             <p>Трек 2</p>
             <audio controls>
                 <source src="track2.mp3" type="audio/mpeg">

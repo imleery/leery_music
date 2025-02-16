@@ -15,6 +15,23 @@
             border: 2px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная белая рамка */
             transition: 0.3s ease-in-out;
         }
+.galaxy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2020/03/30/13/29/space-4984262_1280.jpg') no-repeat center center;
+    background-size: cover;
+    animation: moveGalaxy 100s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGalaxy {
+    0% { background-position: 0 0; }
+    100% { background-position: -100% -100%; }
+}
+
      .text-box {
     display: inline-block;
     padding: 5px 10px; /* Уменьшаем внутренние отступы */
@@ -363,6 +380,7 @@ h1, h2, p {
     });
 });
 </script>
+<div class="galaxy"></div>
 
 </body>
 </html>

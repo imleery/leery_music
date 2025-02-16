@@ -74,7 +74,7 @@
         .active {
             display: block;
         }
-        .track-card, .video-card {
+        .track-card {
             background: #161616;
             padding: 10px;
             margin: 10px auto;
@@ -86,17 +86,17 @@
             box-shadow: 0px 0px 10px #9147ff;
             justify-content: space-between;
         }
-        .track-card img, .video-card img {
+        .track-card img {
             width: 50px;
             height: 50px;
             border-radius: 5px;
         }
-        .track-info, .video-info {
+        .track-info {
             flex-grow: 1;
             padding-left: 15px;
             text-align: left;
         }
-        .track-title, .video-title {
+        .track-title {
             font-size: 16px;
             color: #fff;
         }
@@ -113,6 +113,21 @@
         }
         .play-button:hover {
             background: red;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px #9147ff;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
         }
     </style>
     <script>
@@ -147,12 +162,10 @@
     
     <div id="videos" class="section">
         <h2>Видео</h2>
-        <div class="video-card">
-            <img src="thumbnail1.jpg" alt="Видео превью">
-            <div class="video-info">
-                <p class="video-title">Моё видео</p>
-            </div>
-            <button class="play-button">▶</button>
+        <div class="video-container">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
     

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -25,83 +25,75 @@
             border: 5px solid #9147ff;
             box-shadow: 0px 0px 15px #9147ff;
         }
-        .video-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 0px 10px #9147ff;
+        .socials {
+            margin-top: 40px;
+            margin-bottom: 50px;
         }
-        .video-container video {
-            width: 100%;
-            height: auto;
+        .socials a {
+            display: block;
+            width: 200px;
+            margin: 0 auto 10px;
+            padding: 10px;
+            border: 2px solid #9147ff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #9147ff;
+            transition: border-color 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+        .socials a:hover {
+            border-color: red;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .menu a {
+            color: #9147ff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+            border: 2px solid #9147ff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #9147ff;
+            transition: border-color 0.3s;
+        }
+        .menu a:hover {
+            border-color: red;
+        }
+        .section {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #9147ff;
             border-radius: 10px;
+            box-shadow: 0px 0px 15px #9147ff;
+        }
+        .active {
             display: block;
         }
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            color: white;
-            font-size: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .track-card {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #9147ff;
         }
-        .play-button:hover {
-            background: red;
+        #home h2 {
+            color: #d8b3ff;
         }
-        .fullscreen-button {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            color: white;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        .fullscreen-button:hover {
-            background: red;
+        #home p {
+            color: #4b92db;
         }
     </style>
     <script>
-        function toggleVideo(videoId, button) {
-            let video = document.getElementById(videoId);
-            if (video.paused) {
-                video.play();
-                button.style.display = 'none';
-            } else {
-                video.pause();
-                button.style.display = 'flex';
-            }
-        }
-        function enterFullscreen(videoId) {
-            let video = document.getElementById(videoId);
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) {
-                video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
-            }
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
         }
     </script>
 </head>
@@ -109,12 +101,48 @@
     <img src="banner.jpg" alt="Баннер" class="banner">
     <img src="avatar.jpg" alt="Аватарка" class="avatar">
     
+    <div class="socials">
+        <a href="https://www.youtube.com/@imleery1" target="_blank">YouTube</a>
+        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271" target="_blank">Spotify</a>
+        <a href="https://www.instagram.com/_imleery_/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1" target="_blank">TikTok</a>
+        <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
+    </div>
+
+    <div class="menu">
+        <a href="#" onclick="showSection('home')">Главная</a>
+        <a href="#" onclick="showSection('videos')">Видео</a>
+        <a href="#" onclick="showSection('music')">Треки</a>
+    </div>
+    
+    <div id="home" class="section active">
+        <h2>Обо мне</h2>
+        <p>Привет. Я обычный парень, занимаюсь музыкой не так давно. Хочу делиться своими работами с публикой. Спасибо, что интересуешься мной.</p>
+    </div>
+    
     <div id="videos" class="section">
         <h2>Видео</h2>
-        <div class="video-container">
-            <video id="video1" src="video1.mp4" type="video/mp4" playsinline></video>
-            <button class="play-button" onclick="toggleVideo('video1', this)">▶</button>
-            <button class="fullscreen-button" onclick="enterFullscreen('video1')">⛶</button>
+        <video width="320" height="240" controls>
+            <source src="video1.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+    
+    <div id="music" class="section">
+        <h2>Треки</h2>
+        <div class="track-card">
+            <p>Трек 1</p>
+            <audio controls>
+                <source src="track1.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+        </div>
+        <div class="track-card">
+            <p>Трек 2</p>
+            <audio controls>
+                <source src="track2.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
         </div>
     </div>
 </body>

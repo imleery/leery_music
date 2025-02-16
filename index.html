@@ -74,44 +74,45 @@
         .active {
             display: block;
         }
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px #9147ff;
-        }
-        .video-container video {
-            border-radius: 10px;
-            border: 2px solid #9147ff;
-        }
-        .music-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px #9147ff;
-        }
-        .track-card {
-            background: #252525;
-            padding: 15px;
+        .track-card, .video-card {
+            background: #161616;
+            padding: 10px;
+            margin: 10px auto;
             width: 80%;
-            max-width: 400px;
+            max-width: 500px;
+            display: flex;
+            align-items: center;
             border-radius: 10px;
-            box-shadow: 0px 0px 15px #9147ff;
-            text-align: center;
+            box-shadow: 0px 0px 10px #9147ff;
+            justify-content: space-between;
         }
-        #home h2 {
-            color: #d8b3ff;
+        .track-card img, .video-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
         }
-        #home p {
-            color: #4b92db;
+        .track-info, .video-info {
+            flex-grow: 1;
+            padding-left: 15px;
+            text-align: left;
+        }
+        .track-title, .video-title {
+            font-size: 16px;
+            color: #fff;
+        }
+        .track-card audio {
+            display: none;
+        }
+        .play-button {
+            background: #9147ff;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .play-button:hover {
+            background: red;
         }
     </style>
     <script>
@@ -144,28 +145,27 @@
         <p>Привет. Я обычный парень, занимаюсь музыкой не так давно. Хочу делиться своими работами с публикой. Спасибо, что интересуешься мной.</p>
     </div>
     
-    <div id="videos" class="section video-container">
+    <div id="videos" class="section">
         <h2>Видео</h2>
-        <video width="320" height="240" controls>
-            <source src="video1.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
+        <div class="video-card">
+            <img src="thumbnail1.jpg" alt="Видео превью">
+            <div class="video-info">
+                <p class="video-title">Моё видео</p>
+            </div>
+            <button class="play-button">▶</button>
+        </div>
     </div>
     
-    <div id="music" class="section music-container">
+    <div id="music" class="section">
         <h2>Треки</h2>
         <div class="track-card">
-            <p>Трек 1</p>
+            <img src="cover1.jpg" alt="Трек обложка">
+            <div class="track-info">
+                <p class="track-title">Трек 1</p>
+            </div>
+            <button class="play-button">▶</button>
             <audio controls>
                 <source src="track1.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
-        </div>
-        <div class="track-card">
-            <p>Трек 2</p>
-            <audio controls>
-                <source src="track2.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
             </audio>
         </div>
     </div>

@@ -78,14 +78,17 @@ h1, h2, p {
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        background-color: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
+        body {
+            background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
             background-size: 400% 400%;
-            animation: gradient 8s ease infinite;
+            animation: gradient 10s ease infinite;
             color: white;
             font-family: 'Poppins', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            position: relative;
+      
         }
         .header {
             padding: 20px;

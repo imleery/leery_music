@@ -127,22 +127,6 @@
             color: white;
             font-size: 20px;
         }
-        .progress-bar {
-            flex: 1;
-            height: 5px;
-            background: gray;
-            margin: 0 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            position: relative;
-        }
-        .progress-bar span {
-            position: absolute;
-            height: 100%;
-            background: #1db954;
-            width: 0%;
-            border-radius: 5px;
-        }
     </style>
     <script>
         function playTrack(audioId, button) {
@@ -162,6 +146,13 @@
                 button.innerHTML = '▶';
             }
         }
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('home');
+        });
     </script>
 </head>
 <body>
@@ -179,6 +170,11 @@
     <div class="menu">
         <a href="#" onclick="showSection('home')">Главная</a>
         <a href="#" onclick="showSection('music')">Треки</a>
+    </div>
+    
+    <div id="home" class="section active">
+        <h2>Главная</h2>
+        <p>Добро пожаловать в мир музыки Leery!</p>
     </div>
     
     <div id="music" class="section">

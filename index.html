@@ -78,38 +78,34 @@ h1, h2, p {
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        body {
-            background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-            color: white;
-            font-family: 'Russo One', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
+       body {
+    background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d), url('https://example.com/your-galaxy-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Закрепить фон */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Скрыть все лишнее, чтобы не было полос прокрутки */
+}
 
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://cdn.pixabay.com/photo/2017/07/17/19/03/space-2515561_960_720.jpg') repeat;
-            z-index: -1;
-            opacity: 0.3;
-            animation: moveStars 60s linear infinite;
-        }
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.w3schools.com/w3images/stars.jpg'); /* Текстуру звезд можно взять из интернета */
+    background-repeat: repeat;
+    animation: moveStars 50s linear infinite; /* Анимация движения */
+}
 
-        @keyframes moveStars {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
+@keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
 
         @keyframes gradient {
             0% { background-position: 0% 50%; }

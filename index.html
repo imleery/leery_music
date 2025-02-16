@@ -46,17 +46,18 @@ h1, h2, p {
 
         /* Стилизация кнопок */
         .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            background: rgba(145, 71, 255, 0.3); /* Полупрозрачный фиолетовый */
-            border-radius: 10px;
-            border: 2px solid rgba(145, 71, 255, 0.5);
-            transition: 0.3s ease-in-out;
-        }
+    display: inline-block;
+    padding: 8px 15px;  /* Уменьшите отступы по бокам и сверху/снизу */
+    margin: 5px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: rgba(145, 71, 255, 0.6); /* Фиолетовый с 60% прозрачностью */
+    border-radius: 10px;
+    border: 2px solid rgba(145, 71, 255, 0.5);
+    transition: 0.3s ease-in-out;
+}
+
 
         /* Подсветка кнопок при наведении */
         .button:hover {
@@ -151,7 +152,7 @@ h1, h2, p {
             gap: 10px;
         }
         .play-button {
-            background: #1db954;
+             background: #000080; /* На темно-синий */
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -159,7 +160,7 @@ h1, h2, p {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0px 0px 10px #1db954;
+           box-shadow: 0 0 10px #000080; /* Также поменяйте свечение на темно-синий */
             color: white;
             font-size: 20px;
         }
@@ -255,6 +256,7 @@ h1, h2, p {
 
 </div>
 
+<div class="text-box">
  <div class="social-links">
           <a href="https://www.youtube.com/@imleery1" target="_blank" class="button">YouTube</a>
           <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=46a96934bbb745d5" target="_blank" class="button">Spotify</a>

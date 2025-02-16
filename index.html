@@ -131,6 +131,18 @@
     <div class="description">
         <p>Инструментальная музыка, вдохновлённая атмосферой и эмоциями. Добро пожаловать в мир звуков!</p>
     </div>
+    <div class="track-list">
+        <div class="track-card">
+            <img src="track1.jpg" alt="Трек 1">
+            <h3>Название Трека 1</h3>
+            <audio id="track1" src="track1.mp3"></audio>
+            <div class="custom-audio">
+                <div class="play-button" onclick="playTrack('track1', this)">▶</div>
+                <div class="progress-bar"><div class="progress"></div></div>
+                <div class="time">0:00 / 0:00</div>
+            </div>
+        </div>
+    </div>
     <script>
         function updateTime(audio, progressBar, timeDisplay) {
             audio.addEventListener("timeupdate", () => {

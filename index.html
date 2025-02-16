@@ -32,6 +32,14 @@
             text-decoration: none;
             font-size: 20px;
         }
+        .media {
+            margin-top: 30px;
+        }
+        video, audio {
+            width: 80%;
+            max-width: 600px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -39,10 +47,30 @@
     <img src="avatar.jpg" alt="Аватарка" class="avatar">
     <div class="socials">
         <a href="https://www.youtube.com/@imleery1" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271"_blank">Spotify</a>
+        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT?si=JR5AYF7BSYqZDlcg_OPcMA&nd=1&dlsi=2e1259a048cd4271" target="_blank">Spotify</a>
         <a href="https://www.instagram.com/_imleery_/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1"_blank">TikTok</a>
-        <a href="https://soundcloud.com/imleery"_blank">SoundCloud</a>
+        <a href="https://www.tiktok.com/@imleery?_t=ZM-8tmADO2MF0Q&_r=1" target="_blank">TikTok</a>
+        <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
+    </div>
+    <div class="media">
+        <h2>Видео</h2>
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <h2>Треки</h2>
+        <audio controls>
+            <source src="track1.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
+        <audio controls>
+            <source src="track2.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
     </div>
 </body>
 </html>

@@ -24,13 +24,17 @@ body {
             border: 2px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная белая рамка */
             transition: 0.3s ease-in-out;
         }
-       .text-box {
+     .text-box {
     display: inline-block;
-    padding: 8px 15px;  /* Уменьшаем внутренние отступы */
-    border: 2px solid rgba(145, 71, 255, 0.6); /* Фиолетовая рамка */
-    border-radius: 10px;
+    padding: 5px 10px; /* Уменьшаем внутренние отступы */
+    border: 1px solid rgba(145, 71, 255, 0.6); /* Уменьшаем толщину рамки */
+    border-radius: 8px; /* Немного уменьшаем закругление */
     text-align: center;
-    margin: 10px auto;  /* Меньше отступов между блоками */
+    margin: 5px auto; /* Меньше отступов между блоками */
+}
+
+h1, h2, p {
+    margin: 5px 0; /* Уменьшаем отступы между текстом */
 }
 .centered {
     display: flex;

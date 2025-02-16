@@ -185,5 +185,27 @@
             </div>
         </div>
     </div>
+<script>
+    function playTrack(audioId) {
+        // Получаем элемент аудиоплеера по его ID
+        let audio = document.getElementById(audioId);
+
+        // Останавливаем все аудиофайлы перед запуском нового
+        document.querySelectorAll('audio').forEach(a => {
+            if (a.id !== audioId) {  // Проверяем, что это НЕ тот аудиоплеер, который мы хотим запустить
+                a.pause();           // Останавливаем воспроизведение
+                a.currentTime = 0;   // Перематываем на начало
+            }
+        });
+
+        // Если музыка на паузе, запускаем ее
+        if (audio.paused) {
+            audio.play(); // Включаем трек
+        } else {
+            audio.pause(); // Ставим на паузу, если уже играет
+        }
+    }
+</script>
+
 </body>
 </html>

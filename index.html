@@ -21,6 +21,56 @@
             margin: 0;
             padding: 0;
         }
+        .header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -75px;
+            border: 5px solid white;
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .description {
+            margin: 20px;
+            font-size: 18px;
+        }
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .track-card {
+            background: #1a1a1a;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #9147ff;
+            text-align: center;
+            position: relative;
+        }
+        .track-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
         .custom-audio {
             width: 100%;
             background: #0a0a1a;
@@ -61,58 +111,23 @@
         .time {
             font-size: 12px;
             color: white;
-            min-width: 60px;
         }
     </style>
-    <script>
-        function playTrack(audioId, button) {
-            let audio = document.getElementById(audioId);
-            document.querySelectorAll('audio').forEach(a => {
-                if (a.id !== audioId) {
-                    a.pause();
-                    a.currentTime = 0;
-                }
-            });
-            document.querySelectorAll('.play-button').forEach(btn => btn.innerHTML = '▶');
-            if (audio.paused) {
-                audio.play();
-                button.innerHTML = '⏸';
-            } else {
-                audio.pause();
-                button.innerHTML = '▶';
-            }
-        }
-        function updateProgress(audio, progressBar, progress, timeDisplay) {
-            audio.addEventListener('timeupdate', () => {
-                const percent = (audio.currentTime / audio.duration) * 100;
-                progress.style.width = percent + '%';
-                timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
-            });
-            progressBar.addEventListener('click', (event) => {
-                const rect = progressBar.getBoundingClientRect();
-                const offsetX = event.clientX - rect.left;
-                const width = rect.width;
-                const newTime = (offsetX / width) * audio.duration;
-                audio.currentTime = newTime;
-            });
-        }
-        function formatTime(seconds) {
-            let min = Math.floor(seconds / 60);
-            let sec = Math.floor(seconds % 60);
-            return min + ':' + (sec < 10 ? '0' + sec : sec);
-        }
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.custom-audio').forEach(player => {
-                let audio = player.querySelector('audio');
-                let progressBar = player.querySelector('.progress-bar');
-                let progress = player.querySelector('.progress');
-                let timeDisplay = player.querySelector('.time');
-                updateProgress(audio, progressBar, progress, timeDisplay);
-            });
-        });
-    </script>
 </head>
 <body>
+    <div class="header">
+        <img src="banner.jpg" alt="Banner" class="banner">
+        <img src="avatar.jpg" alt="Avatar" class="avatar">
+        <h1>Leery Music</h1>
+        <div class="social-links">
+            <a href="https://youtube.com" target="_blank">🎵 YouTube</a>
+            <a href="https://spotify.com" target="_blank">🎵 Spotify</a>
+            <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+        </div>
+    </div>
+    <div class="description">
+        <p>Инструментальная музыка, вдохновлённая атмосферой и эмоциями. Добро пожаловать в мир звуков!</p>
+    </div>
     <div id="music" class="section">
         <h2>Треки</h2>
         <div class="track-list">

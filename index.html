@@ -78,6 +78,7 @@
             animation: borderGlow 1.5s infinite alternate;
         }
         .section {
+            display: none;
             margin-top: 40px;
             padding: 20px;
             border: 2px solid #9147ff;
@@ -86,6 +87,9 @@
         }
         .section:hover {
             animation: borderGlow 1.5s infinite alternate;
+        }
+        .active {
+            display: block;
         }
         .track-card {
             background: #1a1a1a;
@@ -103,6 +107,12 @@
             color: #4b92db;
         }
     </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <img src="banner.jpg" alt="Баннер" class="banner">
@@ -116,7 +126,13 @@
         <a href="https://soundcloud.com/imleery" target="_blank">SoundCloud</a>
     </div>
 
-    <div id="home" class="section">
+    <div class="menu">
+        <a href="#" onclick="showSection('home')">Главная</a>
+        <a href="#" onclick="showSection('videos')">Видео</a>
+        <a href="#" onclick="showSection('music')">Треки</a>
+    </div>
+    
+    <div id="home" class="section active">
         <h2>Обо мне</h2>
         <p>Привет. Я обычный парень, занимаюсь музыкой не так давно. Хочу делиться своими работами с публикой. Спасибо, что интересуешься мной.</p>
     </div>

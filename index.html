@@ -124,11 +124,30 @@
             color: white;
             font-size: 20px;
         }
+        .track-card audio {
+            width: 100%;
+            margin-top: 10px;
+        }
     </style>
     <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
+        function playTrack(audioId, button) {
+            let audio = document.getElementById(audioId);
+
+            document.querySelectorAll('audio').forEach(a => {
+                if (a.id !== audioId) {
+                    a.pause();
+                    a.currentTime = 0;
+                }
+            });
+            document.querySelectorAll('.play-button').forEach(btn => btn.innerHTML = '▶');
+            
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '⏸';
+            } else {
+                audio.pause();
+                button.innerHTML = '▶';
+            }
         }
     </script>
 </head>
@@ -157,55 +176,25 @@
     <div id="music" class="section">
         <h2>Треки</h2>
         <div class="track-list">
-           <div class="track-card">
-    <img src="bruim.jpg" alt="Brute">
-    <div class="track-info">
-        <div class="track-title">Brute</div>
-        <div class="track-meta">2025 • Сингл</div>
-    </div>
-    <!-- Аудиоплеер -->
-    <audio id="bruteAudio" src="Leery - Brute.mp3"></audio>
-    <!-- Кнопка Play -->
-    <div class="play-button" onclick="playTrack('bruteAudio')"></div>
-</div>
-
-<div class="track-card">
-    <img src="Uglim.jpg" alt="Ugliness">
-    <div class="track-info">
-        <div class="track-title">Ugliness</div>
-        <div class="track-meta">2025 • Сингл</div>
-    </div>
-    <!-- Аудиоплеер -->
-    <audio id="uglinessAudio" src="Leery - Ugliness.mp3"></audio>
-    <!-- Кнопка Play -->
-    <div class="play-button" onclick="playTrack('uglinessAudio')"></div>
-</div>
-
-                <div class="play-button" onclick="alert('Воспроизведение Ugliness')"></div>
+            <div class="track-card">
+                <img src="bruim.jpg" alt="Brute">
+                <div class="track-info">
+                    <div class="track-title">Brute</div>
+                    <div class="track-meta">2025 • Сингл</div>
+                </div>
+                <audio id="bruteAudio" src="Leery - Brute.mp3" controls></audio>
+                <div class="play-button" onclick="playTrack('bruteAudio', this)">▶</div>
+            </div>
+            <div class="track-card">
+                <img src="Uglim.jpg" alt="Ugliness">
+                <div class="track-info">
+                    <div class="track-title">Ugliness</div>
+                    <div class="track-meta">2025 • Сингл</div>
+                </div>
+                <audio id="uglinessAudio" src="Leery - Ugliness.mp3" controls></audio>
+                <div class="play-button" onclick="playTrack('uglinessAudio', this)">▶</div>
             </div>
         </div>
     </div>
-<script>
-    function playTrack(audioId) {
-        // Получаем элемент аудиоплеера по его ID
-        let audio = document.getElementById(audioId);
-
-        // Останавливаем все аудиофайлы перед запуском нового
-        document.querySelectorAll('audio').forEach(a => {
-            if (a.id !== audioId) {  // Проверяем, что это НЕ тот аудиоплеер, который мы хотим запустить
-                a.pause();           // Останавливаем воспроизведение
-                a.currentTime = 0;   // Перематываем на начало
-            }
-        });
-
-        // Если музыка на паузе, запускаем ее
-        if (audio.paused) {
-            audio.play(); // Включаем трек
-        } else {
-            audio.pause(); // Ставим на паузу, если уже играет
-        }
-    }
-</script>
-
 </body>
 </html>

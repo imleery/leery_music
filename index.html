@@ -33,6 +33,18 @@ body {
     margin: 5px auto; /* Меньше отступов между блоками */
 }
 
+@media (max-width: 768px) {
+    .arrows {
+        margin-top: 20px; /* Добавляем отступ сверху */
+    }
+
+    .background {
+        background-size: cover; /* Убедись, что фон растягивается */
+        animation: animateBG 10s infinite alternate; /* Добавь анимацию для мобильных */
+    }
+}
+
+
 h1, h2, p {
     margin: 5px 0; /* Уменьшаем отступы между текстом */
 }

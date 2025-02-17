@@ -5,198 +5,291 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leery Music</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-   <style>
+    <style>
 body {
-    background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
+    background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d); /* Цветной градиент */
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite; /* Анимация фона */
     font-family: 'Poppins', sans-serif;
     color: white;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-
-/* Общий стиль для текстовых блоков */
-.text-box {
+        /* Общий стиль для текстовых блоков */
+        .text-box {
+            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            padding: 10px;
+            border-radius: 7px; /* Закругленные углы */
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная белая рамка */
+            transition: 0.3s ease-in-out;
+        }
+     .text-box {
     display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid rgba(145, 71, 255, 0.6);
-    border-radius: 8px;
+    padding: 5px 10px; /* Уменьшаем внутренние отступы */
+    border: 1px solid rgba(145, 71, 255, 0.6); /* Уменьшаем толщину рамки */
+    border-radius: 8px; /* Немного уменьшаем закругление */
     text-align: center;
-    margin: 5px auto;
+    margin: 5px auto; /* Меньше отступов между блоками */
 }
 
-/* Медиа-запрос */
 @media (max-width: 768px) {
     .arrows {
-        margin-top: 20px;
+        margin-top: 20px; /* Добавляем отступ сверху */
     }
+
     .background {
-        background-size: cover;
-        animation: animateBG 10s infinite alternate;
+        background-size: cover; /* Убедись, что фон растягивается */
+        animation: animateBG 10s infinite alternate; /* Добавь анимацию для мобильных */
     }
 }
 
-/* Стилизация кнопок */
-.button {
+
+h1, h2, p {
+    margin: 5px 0; /* Уменьшаем отступы между текстом */
+}
+.centered {
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы в колонку */
+    align-items: center; /* Центрируем по горизонтали */
+    justify-content: center; /* Центрируем по вертикали */
+    text-align: center; /* Выравниваем текст */
+}
+
+        /* Стилизация кнопок */
+        .button {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 8px 15px;  /* Уменьшите отступы по бокам и сверху/снизу */
     margin: 5px 0;
     font-weight: bold;
     text-decoration: none;
     color: white;
-    background: rgba(145, 71, 255, 0.6);
+    background: rgba(145, 71, 255, 0.6); /* Фиолетовый с 60% прозрачностью */
     border-radius: 10px;
     border: 2px solid rgba(145, 71, 255, 0.5);
     transition: 0.3s ease-in-out;
 }
-
-.button:hover {
-    background: rgba(145, 71, 255, 0.6);
-    border-color: #9147ff;
-    box-shadow: 0 0 20px rgba(145, 71, 255, 0.8);
+.1231 p {
+    color: white; /* Например, white цвет */
+}
+.1233 p {
+    color: #ffcc00; /* Например, жёлтый цвет */
 }
 
-/* Фон со звездами */
-.stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://cdn.pixabay.com/photo/2017/07/17/19/03/space-2515561_960_720.jpg') repeat;
-    z-index: -1;
-    opacity: 0.3;
-    animation: moveStars 60s linear infinite;
-}
-
-@keyframes moveStars {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Центрирование текста */
-.centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        /* Подсветка кнопок при наведении */
+        .button:hover {
+            background: rgba(145, 71, 255, 0.6); /* Фиолетовый с 60% прозрачностью */
+            border-color: #9147ff;
+            box-shadow: 0 0 20px rgba(145, 71, 255, 0.8); /* Свечение */
+        }
+         /* Стили для текстовых блоков */
+        .text-box {
+    background: rgba(145, 71, 255, 0.3) !important;
+    border: 2px solid #9147ff; /* Фиолетовая рамка */
+    color: white; /* Белый текст */
+    padding: 10px 20px;
+    border-radius: 9px;
     text-align: center;
 }
+           @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+  
+}
+        body {
+            background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+            font-family: 'Russo One', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
 
-/* Аватар */
-.avatar {
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2017/07/17/19/03/space-2515561_960_720.jpg') repeat;
+            z-index: -1;
+            opacity: 0.3;
+            animation: moveStars 60s linear infinite;
+        }
+
+        @keyframes moveStars {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Общий стиль для текста */
+        .text-box {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid rgba(145, 71, 255, 0.6);
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px auto;
+        }
+      
+        }
+        .header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+   .avatar {
     width: 225px;
     height: 225px;
     border-radius: 50%;
-    border: 5px solid #9147ff;
-    box-shadow: 0 0 20px #9147ff, 0 0 40px #9147ff, 0 0 60px #9147ff, 0 0 80px #9147ff;
+    border: 5px solid #9147ff; /* Фиолетовый контур */
+    box-shadow: 0 0 20px #9147ff, 0 0 40px #9147ff, 0 0 60px #9147ff, 0 0 80px #9147ff; /* Увеличиваем светящийся фиолетовый эффект */
     transition: 0.3s ease-in-out;
     margin-bottom: 55px;
 }
-
-/* Блок с текстом */
-.text-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border: 2px solid #9147ff;
-    border-radius: 9px;
-    width: fit-content;
-    margin: 0 auto;
+        }
+        .social-links {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+       .social-links a {
+    display: block; /* Это сделает каждый элемент ссылкой на новой строке */
+    margin: 5px 0; /* Это добавит отступы между элементами */
 }
-
-/* Ссылки на соцсети */
-.social-links {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.social-links a {
-    display: block;
-    margin: 5px 0;
-}
-
-/* Музыкальный плеер */
-.custom-audio {
-    width: calc(100% - 20px);
-    max-width: 260px;
-    background: #0a0a1a;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px auto 0;
-    gap: 10px;
-}
-
-.play-button {
-    background: #000080;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 0 10px #000080;
-    color: white;
-    font-size: 20px;
-}
-
-.progress-bar {
-    flex: 1;
-    height: 5px;
-    background: gray;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-}
-
-.progress {
-    height: 100%;
-    background: #1db954;
-    width: 0%;
-    border-radius: 5px;
-}
-
-.time {
-    font-size: 12px;
-    color: white;
-}
-
-@keyframes glow {
+        }
+        .description {
+            margin: 20px;
+            font-size: 18px;
+        }
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .track-card {
+            background: #1a1a1a;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #9147ff;
+            text-align: center;
+            position: relative;
+        }
+        .track-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .custom-audio {
+            width: calc(100% - 20px);
+            max-width: 260px;
+            background: #0a0a1a;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px auto 0;
+            gap: 10px;
+        }
+        .play-button {
+             background: #000080; /* На темно-синий */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+           box-shadow: 0 0 10px #000080; /* Также поменяйте свечение на темно-синий */
+            color: white;
+            font-size: 20px;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 5px;
+            background: gray;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+        .progress {
+            height: 100%;
+            background: #1db954;
+            width: 0%;
+            border-radius: 5px;
+        }
+        .time {
+            font-size: 12px;
+            color: white;
+        }
+ @keyframes glow {
     0% { text-shadow: 0 0 5px #9147ff, 0 0 10px #9147ff; }
     50% { text-shadow: 0 0 15px #9147ff, 0 0 30px #9147ff; }
     100% { text-shadow: 0 0 5px #9147ff, 0 0 10px #9147ff; }
 }
 
-.arrow {
-    font-size: 200px;
-    color: #9147ff;
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    animation: glow 1.5s infinite alternate ease-in-out;
+ .arrow {
+            font-size: 200px;
+            color: #9147ff;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            animation: glow 1.5s infinite alternate ease-in-out;
+        }
+
+        .arrow-left {
+            left: 3%; /* Сдвинули левее */
+        }
+
+        .arrow-right {
+            right: 3%; /* Сдвинули правее */
+        }
+        .text-box {
+    display: flex;
+    flex-direction: column; /* Выстраивает элементы вертикально */
+    align-items: center; /* Центрирует по горизонтали */
+    justify-content: center; /* Центрирует по вертикали */
+    text-align: center; /* Выравнивает текст внутри */
+    gap: 10px; /* Отступ между элементами */
+    padding: 10px 20px; /* Внутренний отступ */
+    .text-box {
+    border: 2px solid #9147ff; /* Фиолетовый цвет для рамки */
+}
+    border-radius: 9px; /* Скругление углов */
+    width: fit-content; /* Ширина под размер текста */
+    margin: 0 auto; /* Центрирует блок */
+}
+.box {
+    font-family: Arial, sans-serif; /* Шрифт */
+    font-size: 18px; /* Размер текста */
+    color: white; /* Цвет текста */
+    text-transform: uppercase; /* Прописные буквы (если нужно) */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
-.arrow-left { left: 3%; }
-.arrow-right { right: 3%; }
-</style>
-
+           </style>
 </head>
 <body>
     <div class="header">
@@ -210,7 +303,7 @@ body {
 
 </div>
 
-<div class="text-box special ava2">
+<div class="text-box special 1233">
     <p>Leery Music</p>
 </div>
 
@@ -224,7 +317,7 @@ body {
 ㅤㅤㅤㅤㅤㅤㅤ
 </div>ㅤ
 
-<div class="text-box special avk">
+<div class="text-box special 1231">
     <p>Стиль «Phonk»</p>
 </div>
 ㅤㅤㅤㅤㅤ

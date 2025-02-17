@@ -24,18 +24,6 @@ body {
             border: 2px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная белая рамка */
             transition: 0.3s ease-in-out;
         }
-body, html {
-    width: 100%;
-    height: 100%;
-    background: black; /* Фон всей страницы */
-    overflow-x: hidden; /* Убирает горизонтальный скролл */
-}
-
-.content {
-    width: 100%; /* Убедись, что контейнер занимает всю ширину */
-    max-width: 100vw;
-}
-
      .text-box {
     display: inline-block;
     padding: 5px 10px; /* Уменьшаем внутренние отступы */
@@ -122,38 +110,26 @@ h1, h2, p {
             position: relative;
         }
 
-       .stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: black;
-    z-index: -1; /* Чтобы звезды были на заднем плане */
-}
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2017/07/17/19/03/space-2515561_960_720.jpg') repeat;
+            z-index: -1;
+            opacity: 0.3;
+            animation: moveStars 60s linear infinite;
+        }
 
-.stars::before, .stars::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(white, transparent);
-    background-size: 3px 3px;
-    animation: starMove 100s linear infinite;
-    opacity: 0.7;
-}
-
-.stars::after {
-    background-size: 2px 2px;
-    animation-duration: 150s;
-    opacity: 0.5;
-}
-
-@keyframes starMove {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-1000px); }
-}
-
+        @keyframes moveStars {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
 
         @keyframes gradient {
             0% { background-position: 0% 50%; }
@@ -275,10 +251,10 @@ h1, h2, p {
 }
 
  .arrow {
-            font-size: 175px;
+            font-size: 200px;
             color: #9147ff;
             position: absolute;
-            top: 38%;
+            top: 45%;
             transform: translateY(-50%);
             animation: glow 1.5s infinite alternate ease-in-out;
         }
@@ -316,13 +292,6 @@ h1, h2, p {
            </style>
 </head>
 <body>
-
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-
-<div class="stars"></div>
     <div class="header">
         <img src="banner1.png" alt="Banner" class="banner">
         <div class="arrow arrow-left">⬇</div>

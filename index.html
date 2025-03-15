@@ -1,494 +1,394 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leery Music</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Стильний одяг</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.css" rel="stylesheet" />
     <style>
-body {
-    background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d); /* Цветной градиент */
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite; /* Анимация фона */
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.footer {
-    margin-top: 50px;
-    padding: 15px;
-    background: rgba(145, 71, 255, 0.2); /* Фиолетовый полупрозрачный фон */
-    border: 2px solid #9147ff; /* Светящаяся фиолетовая рамка */
-    color: #c299ff; /* Приятный фиолетовый цвет текста */
-    text-align: center;
-    font-size: 16px;
-    border-radius: 10px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 15px #9147ff; /* Светящийся эффект */
-}
-
-        /* Общий стиль для текстовых блоков */
-        .text-box {
-            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-            padding: 10px;
-            border-radius: 7px; /* Закругленные углы */
-            border: 2px solid rgba(255, 255, 255, 0.3); /* Полупрозрачная белая рамка */
-            transition: 0.3s ease-in-out;
-        }
-     .text-box {
-    display: inline-block;
-    padding: 5px 10px; /* Уменьшаем внутренние отступы */
-    border: 1px solid rgba(145, 71, 255, 0.6); /* Уменьшаем толщину рамки */
-    border-radius: 8px; /* Немного уменьшаем закругление */
-    text-align: center;
-    margin: 5px auto; /* Меньше отступов между блоками */
-}
-
-@media (max-width: 768px) {
-    .arrows {
-        margin-top: 20px; /* Добавляем отступ сверху */
-    }
-
-    .background {
-        background-size: cover; /* Убедись, что фон растягивается */
-        animation: animateBG 10s infinite alternate; /* Добавь анимацию для мобильных */
-    }
-}
-
-
-h1, h2, p {
-    margin: 5px 0; /* Уменьшаем отступы между текстом */
-}
-.centered {
-    display: flex;
-    flex-direction: column; /* Выстраиваем элементы в колонку */
-    align-items: center; /* Центрируем по горизонтали */
-    justify-content: center; /* Центрируем по вертикали */
-    text-align: center; /* Выравниваем текст */
-}
-
-        /* Стилизация кнопок */
-        .button {
-    display: inline-block;
-    padding: 8px 15px;  /* Уменьшите отступы по бокам и сверху/снизу */
-    margin: 5px 0;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    background: rgba(145, 71, 255, 0.6); /* Фиолетовый с 60% прозрачностью */
-    border-radius: 10px;
-    border: 2px solid rgba(145, 71, 255, 0.5);
-    transition: 0.3s ease-in-out;
-}
-.1231 p {
-    color: white; /* Например, white цвет */
-}
-.1233 p {
-    color: #ffcc00; /* Например, жёлтый цвет */
-}
-
-        /* Подсветка кнопок при наведении */
-        .button:hover {
-            background: rgba(145, 71, 255, 0.6); /* Фиолетовый с 60% прозрачностью */
-            border-color: #9147ff;
-            box-shadow: 0 0 20px rgba(145, 71, 255, 0.8); /* Свечение */
-        }
-         /* Стили для текстовых блоков */
-        .text-box {
-    background: rgba(145, 71, 255, 0.3) !important;
-    border: 2px solid #9147ff; /* Фиолетовая рамка */
-    color: white; /* Белый текст */
-    padding: 10px 20px;
-    border-radius: 9px;
-    text-align: center;
-}
-           @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-  
-}
         body {
-            background: linear-gradient(-45deg, #0a0a1a, #1a004d, #0a0a1a, #001a4d);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-            color: white;
-            font-family: 'Russo One', sans-serif;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            position: relative;
+            background-color: #f7f7f7;
+            color: #333;
+            font-size: 1.5rem; /* Увеличиваем весь текст для лучшей читаемости */
         }
 
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://cdn.pixabay.com/photo/2017/07/17/19/03/space-2515561_960_720.jpg') repeat;
-            z-index: -1;
-            opacity: 0.3;
-            animation: moveStars 60s linear infinite;
-        }
-
-        @keyframes moveStars {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Общий стиль для текста */
-        .text-box {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid rgba(145, 71, 255, 0.6);
-            border-radius: 10px;
+        header {
+            background-color: #4B0082;
+            color: #fff;
+            padding: 30px;
             text-align: center;
-            margin: 20px auto;
+            font-family: 'Lora', serif;
         }
-      
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
         }
-        .header {
+
+        header p {
+            font-size: 1.4rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
         }
-        .banner {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
+
+        .product-info {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
-   .avatar {
-    width: 225px;
-    height: 225px;
-    border-radius: 50%;
-    border: 5px solid #9147ff; /* Фиолетовый контур */
-    box-shadow: 0 0 20px #9147ff, 0 0 40px #9147ff, 0 0 60px #9147ff, 0 0 80px #9147ff; /* Увеличиваем светящийся фиолетовый эффект */
-    transition: 0.3s ease-in-out;
-    margin-bottom: 55px;
-}
+
+        .product-images, .video-section {
+            width: 48%;
         }
-        .social-links {
-            margin-top: 10px;
+
+        .product-description {
+            width: 48%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
-       .social-links a {
-    display: block; /* Это сделает каждый элемент ссылкой на новой строке */
-    margin: 5px 0; /* Это добавит отступы между элементами */
-}
+
+        .video-section {
+            margin-top: 0;
+            max-width: 100%;
+            margin: 0 auto;
         }
-        .description {
-            margin: 20px;
-            font-size: 18px;
+
+        .plyr__video-embed {
+            max-width: 100%;
+            height: auto;
+            border: 4px solid #4B0082; 
+            border-radius: 10px; 
+            padding: 5px;
+            margin: 10px;
+            box-sizing: border-box;
         }
-        .track-list {
+
+        .product-images {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            justify-content: space-between;
         }
-        .track-card {
-            background: #1a1a1a;
-            width: 300px;
-            padding: 15px;
+
+        .product-images img {
+            width: 48%;
+            margin-bottom: 10px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px #9147ff;
+            border: 4px solid #4B0082;
+            padding: 5px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .product-images img:last-child {
+            width: 48%; 
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .product-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-description h2 {
+            font-size: 2.5rem;
+            color: #4B0082;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .product-description p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .product-description span {
+            font-size: 1.2rem;
+            color: #4B0082;
+            font-weight: bold;
+        }
+
+        .product-description .highlight {
+            color: #FF6F61;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #4B0082;
+            color: #fff;
             text-align: center;
-            position: relative;
+            padding: 20px;
+            margin-top: 40px;
         }
-        .track-card img {
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sticker {
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #FF6F61;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 1.6rem;
+            color: #FF6F61;
+            font-weight: 700;
+        }
+
+        .product-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .product-description ul li {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
             width: 100%;
-            border-radius: 10px;
-        }
-        .custom-audio {
-            width: calc(100% - 20px);
-            max-width: 260px;
-            background: #0a0a1a;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px auto 0;
-            gap: 10px;
-        }
-        .play-button {
-             background: #000080; /* На темно-синий */
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-           box-shadow: 0 0 10px #000080; /* Также поменяйте свечение на темно-синий */
-            color: white;
-            font-size: 20px;
-        }
-        .progress-bar {
-            flex: 1;
-            height: 5px;
-            background: gray;
-            border-radius: 5px;
-            position: relative;
-            cursor: pointer;
-        }
-        .progress {
             height: 100%;
-            background: #1db954;
-            width: 0%;
-            border-radius: 5px;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
         }
-        .time {
-            font-size: 12px;
-            color: white;
-        }
- @keyframes glow {
-    0% { text-shadow: 0 0 5px #9147ff, 0 0 10px #9147ff; }
-    50% { text-shadow: 0 0 15px #9147ff, 0 0 30px #9147ff; }
-    100% { text-shadow: 0 0 5px #9147ff, 0 0 10px #9147ff; }
-}
 
- .arrow {
-            font-size: 175px;
-            color: #9147ff;
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+        }
+
+        .modal-content:hover {
+            transform: scale(1.05);
+        }
+
+        .close {
             position: absolute;
-            top: 38%;
-            transform: translateY(-50%);
-            animation: glow 1.5s infinite alternate ease-in-out;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .arrow-left {
-            left: 3%; /* Сдвинули левее */
+        .close:hover,
+        .close:focus {
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        .arrow-right {
-            right: 3%; /* Сдвинули правее */
+        .stylish {
+            padding-left: 14.6ch;
+            font-weight: bold; /* Делаем текст жирным */
         }
-        .text-box {
-    display: flex;
-    flex-direction: column; /* Выстраивает элементы вертикально */
-    align-items: center; /* Центрирует по горизонтали */
-    justify-content: center; /* Центрирует по вертикали */
-    text-align: center; /* Выравнивает текст внутри */
-    gap: 10px; /* Отступ между элементами */
-    padding: 10px 20px; /* Внутренний отступ */
-    .text-box {
-    border: 2px solid #9147ff; /* Фиолетовый цвет для рамки */
-}
-    border-radius: 9px; /* Скругление углов */
-    width: fit-content; /* Ширина под размер текста */
-    margin: 0 auto; /* Центрирует блок */
-}
-.box {
-    font-family: Arial, sans-serif; /* Шрифт */
-    font-size: 18px; /* Размер текста */
-    color: white; /* Цвет текста */
-    text-transform: uppercase; /* Прописные буквы (если нужно) */
-    text-align: center; /* Выравнивание текста по центру */
-}
+        
+        .video-section h2 {
+            padding-right: 7.0ch; /* Сдвигает на 1 пробел */
+        }
 
-           </style>
+        .video-section {
+            width: 150%;
+            display: flex;
+            justify-content: center;  /* Центрируем видео */
+            align-items: center;
+            margin-top: 27px;  /* Отступ сверху */
+        }
+
+       .plyr__video-embed {
+    width: 32.5%; /* Устанавливаем ширину видео в два раза меньше */
+    border: 4px solid #4B0082; /* Устанавливаем рамку */
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+        @media only screen and (max-width: 768px) {
+            .product-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images {
+                width: 100%;
+            }
+
+            .product-images img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .product-description {
+                width: 100%;
+            }
+
+            .product-description h2 {
+                font-size: 1.6rem;
+            }
+
+            .price {
+                font-size: 1.4rem;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .product-description h2 {
+                font-size: 1.3rem;
+            }
+
+            .product-description p {
+                font-size: 1rem;
+            }
+
+            .product-description span {
+                font-size: 1.1rem;
+            }
+
+            .sticker {
+                font-size: 1.3rem;
+            }
+
+            .price {
+                font-size: 1.3rem;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <div class="header">
-        <img src="banner1.png" alt="Banner" class="banner">
-        <div class="arrow arrow-left">⬇</div>
-<div class="arrow arrow-right">⬇</div>
 
-        <img src="avatar.jpg" alt="Avatar" class="avatar"> 
+    <header>
+        <h1>Стильний одяг</h1>
+        <p>🔥Гарні та стильні речі для Вас🔥</p>
+    </header>
 
-  </div>
+    <div class="container">
+        <section class="video-section">
+            <h2>Набір стильних бомберів</h2>
+            <div class="plyr__video-embed" id="player">
+                <video id="video" controls>
+                    <source src="vi1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </section>
 
-</div>
+        <section class="product-info">
+            <div class="product-description">
+                <p class="stylish">Стильна новинка</p>
+                <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
+                <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
+                <h3>Бомбер</h3>
+                <p class="price">Ціна: 1250 грн</p>
+                <ul>
+                    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
+                    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
+                    <li>▪️Розмір: S-М; М-L</li>
+                    <li>▪️Параметри на S-M:</li>
+                    <li>▪️Довжина виробу: 70 см</li>
+                    <li>▪️Довжина рукава: 80 см</li>
+                    <li>▪️ОГ: 126 см</li>
+                    <li>▪️ОТ: 116 см</li>
+                </ul>
+            </div>
 
-<div class="text-box special 1233">
-    <p>Leery Music</p>
-</div>
+            <div class="product-images">
+                <div class="color-section">
+                    <h3>Рожевий колір</h3>
+                    <img src="roz1.jpg" alt="Фото 1" onclick="openModal(this)">
+                    <img src="roz2.jpg" alt="Фото 2" onclick="openModal(this)">
+                    <img src="roz3.jpg" alt="Фото 3" onclick="openModal(this)">
+                </div>
 
-</div>
+                <div class="color-section">
+                    <h3>Чорний колір</h3>
+                    <img src="chern1.jpg" alt="Фото 4" onclick="openModal(this)">
+                    <img src="chern2.jpg" alt="Фото 5" onclick="openModal(this)">
+                </div>
 
-ㅤㅤㅤㅤㅤㅤㅤ
+                <div class="color-section">
+                    <h3>Сірий колір</h3>
+                    <img src="ser1.jpg" alt="Фото 6" onclick="openModal(this)">
+                    <img src="ser2.jpg" alt="Фото 7" onclick="openModal(this)">
+                </div>
 
-<div class="text-box">
-    <p>Инструментальная музыка, вдохновленная атмосферой и эмоциями.</p>
-</div>
-ㅤㅤㅤㅤㅤㅤㅤ
-</div>ㅤ
-
-<div class="text-box special 1231">
-    <p>Стиль «Phonk»</p>
-</div>
-ㅤㅤㅤㅤㅤ
-</div>
-
-<h1>-----------</h1>
-
-<div class="text-box">
-<h1>Я в соц.сетях</h1>
-
-</div>
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-<div class="text-box">
-    <div class="social-links">
-
-        <a href="https://t.me/+mRowm2YwurtlNTZi" target="_blank" class="button">
-            <i class="fa-brands fa-telegram"></i> Telegram
-        </a>
-
-        <a href="https://www.youtube.com/@imleery1" target="_blank" class="button">
-            <i class="fa-brands fa-youtube"></i> YouTube
-        </a>
-        <a href="https://open.spotify.com/artist/0y98y0Vv7QJSihRUhJFCpT" target="_blank" class="button">
-            <i class="fa-brands fa-spotify"></i> Spotify
-        </a>
-        <a href="https://www.instagram.com/_imleery_/" target="_blank" class="button">
-            <i class="fa-brands fa-instagram"></i> Instagram
-        </a>
-        <a href="https://soundcloud.com/imleery" target="_blank" class="button">
-            <i class="fa-brands fa-soundcloud"></i> SoundCloud
-        </a>
-        <a href="https://www.tiktok.com/@imleery" target="_blank" class="button">
-            <i class="fa-brands fa-tiktok"></i> TikTok
-        </a>
-    </div>
-</div>
-
-</div>
-
-<h1>-----------</h1>
-
-
-</div>
-
-
-    <div id="music" class="section">
-        <h2 class="text-box">Треки</h2>
-       <div class="track-list">
- <div class="track-card">
-        <img src="Fearim.jpg" alt="Fear">
-        <div class="track-info">
-            <div class="track-title">Fear</div>
-            <div class="track-meta">2025 • Сингл</div>
-        </div>
-        <div class="custom-audio">
-            <div class="play-button" onclick="playTrack('fearAudio', this)">▶</div>
-            <div class="progress-bar"><div class="progress"></div></div>
-            <div class="time">0:00 / 0:00</div>
-            <audio id="fearAudio" src="Leery - Fear.mp3"></audio>
- </div>	
+                <div class="color-section">
+                    <h3>Білий колір</h3>
+                    <img src="be1.jpg" alt="Фото 8" onclick="openModal(this)">
+                    <img src="be2.jpg" alt="Фото 9" onclick="openModal(this)">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="track-card">
-        <img src="bruim.jpg" alt="Brute">
-        <div class="track-info">
-            <div class="track-title">Brute</div>
-            <div class="track-meta">2025 • Сингл</div>
-        </div>
-        <div class="custom-audio">
-            <div class="play-button" onclick="playTrack('bruteAudio', this)">▶</div>
-            <div class="progress-bar"><div class="progress"></div></div>
-            <div class="time">0:00 / 0:00</div>
-            <audio id="bruteAudio" src="Leery - Brute.mp3"></audio>
-        </div>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
     </div>
 
-    <div class="track-card">
-        <img src="Uglim.jpg" alt="Ugliness">
-        <div class="track-info">
-            <div class="track-title">Ugliness</div>
-            <div class="track-meta">2025 • Сингл</div>
-        </div>
-        <div class="custom-audio">
-            <div class="play-button" onclick="playTrack('uglinessAudio', this)">▶</div>
-            <div class="progress-bar"><div class="progress"></div></div>
-            <div class="time">0:00 / 0:00</div>
-            <audio id="uglinessAudio" src="Leery - Ugliness.mp3"></audio>
-         </div>	
-    </div>
-</div>
+    <footer>
+        <p>&copy; 2025 Курганська Катерина Василівна</p>
+    </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function playTrack(audioId, button) {
-        let audio = document.getElementById(audioId);
-        let parent = button.closest(".custom-audio");
-        let progressBar = parent.querySelector(".progress-bar");
-        let progress = parent.querySelector(".progress");
-        let timeDisplay = parent.querySelector(".time");
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.js"></script>
+    <script>
+        const player = new Plyr('#video');
 
-        // Останавливаем другие треки
-        document.querySelectorAll("audio").forEach(a => {
-            if (a !== audio) {
-                a.pause();
-                a.parentElement.querySelector(".play-button").textContent = "▶";
-            }
-        });
-
-        // Включаем или ставим на паузу
-        if (audio.paused) {
-            audio.play();
-            button.textContent = "⏸";
-        } else {
-            audio.pause();
-            button.textContent = "▶";
+        function openModal(image) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = image.src;
         }
 
-        // Обновление прогресса и времени
-        audio.addEventListener("timeupdate", function () {
-            let currentTime = formatTime(audio.currentTime);
-            let duration = formatTime(audio.duration);
-            timeDisplay.textContent = `${currentTime} / ${duration}`;
-
-            let progressPercent = (audio.currentTime / audio.duration) * 100;
-            progress.style.width = `${progressPercent}%`;
-        });
-
-        // Перемотка по клику на прогресс-бар
-        progressBar.addEventListener("click", function (e) {
-            let rect = progressBar.getBoundingClientRect();
-            let offsetX = e.clientX - rect.left;
-            let newTime = (offsetX / progressBar.offsetWidth) * audio.duration;
-            audio.currentTime = newTime;
-        });	
-    }
-
-    function formatTime(seconds) {
-        if (isNaN(seconds)) return "0:00";
-        let min = Math.floor(seconds / 60);
-        let sec = Math.floor(seconds % 60);
-        return `${min}:${sec < 10 ? "0" : ""}${sec}`;
-    }
-
-    document.querySelectorAll(".play-button").forEach(button => {
-        button.addEventListener("click", function () {
-            let audioId = this.parentElement.querySelector("audio").id;
-            playTrack(audioId, this);
-        });
-    });
-});
-</script>
-<div class="footer">
-    <p>Почта - nikita2283378@gmail.com</p>
-    <p>© 2025 Leery</p>
-</div>
-
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
